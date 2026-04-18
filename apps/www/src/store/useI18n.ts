@@ -1,3 +1,4 @@
+import React from "react";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import type { Language, Translations } from "../lib/i18n";
@@ -29,17 +30,33 @@ const useI18n = create(
 );
 
 export const useTranslation = () => {
-  const language = useI18n(state => state.language);
+  const storeLanguage = useI18n(state => state.language);
   const t = useI18n(state => state.t);
   const setLanguage = useI18n(state => state.setLanguage);
 
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const language = mounted ? storeLanguage : "en";
+
+  const localizedT = React.useCallback(
+    (key: keyof Translations) => {
+      return translations[language][key] || translations.en[key] || key;
+    },
+    [language]
+  );
+
   return {
     language,
-    t,
+    t: localizedT,
     setLanguage,
     languages: ["en", "zh", "ja", "ko"] as Language[],
     languageNames,
     translations,
+    isMounted: mounted,
   };
 };
 
