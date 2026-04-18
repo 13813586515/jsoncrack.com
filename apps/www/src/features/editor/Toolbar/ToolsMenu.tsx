@@ -5,17 +5,19 @@ import { CgChevronDown } from "react-icons/cg";
 import { MdFilterListAlt } from "react-icons/md";
 import { VscSearchFuzzy, VscJson, VscGroupByRefType } from "react-icons/vsc";
 import { useModal } from "../../../store/useModal";
+import { useTranslation } from "../../../store/useI18n";
 import { StyledToolElement } from "./styles";
 
 export const ToolsMenu = () => {
   const setVisible = useModal(state => state.setVisible);
+  const { t } = useTranslation();
 
   return (
     <Menu shadow="md" withArrow>
       <Menu.Target>
         <StyledToolElement onClick={() => gaEvent("show_tools_menu")}>
           <Flex align="center" gap={3}>
-            Tools <CgChevronDown />
+            {t("tools")} <CgChevronDown />
           </Flex>
         </StyledToolElement>
       </Menu.Target>
@@ -27,7 +29,7 @@ export const ToolsMenu = () => {
             gaEvent("open_jq_modal");
           }}
         >
-          JSON Query (jq)
+          {t("jsonQuery")}
         </Menu.Item>
         <Menu.Item
           leftSection={<MdFilterListAlt />}
@@ -36,7 +38,7 @@ export const ToolsMenu = () => {
             gaEvent("open_json_path_modal");
           }}
         >
-          JSON Path
+          {t("jsonPathTool")}
         </Menu.Item>
         <Menu.Item
           leftSection={<VscJson />}
@@ -45,7 +47,7 @@ export const ToolsMenu = () => {
             gaEvent("open_schema_modal");
           }}
         >
-          JSON Schema
+          {t("jsonSchema")}
         </Menu.Item>
         <Menu.Divider />
         <Menu.Item
@@ -55,7 +57,7 @@ export const ToolsMenu = () => {
             gaEvent("open_type_modal");
           }}
         >
-          Generate Type
+          {t("generateType")}
         </Menu.Item>
       </Menu.Dropdown>
     </Menu>

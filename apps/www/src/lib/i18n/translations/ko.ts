@@ -37,6 +37,8 @@ export const ko = {
   editor: "에디터",
   graphView: "그래프 뷰",
   treeView: "트리 뷰",
+  graph: "그래프",
+  tree: "트리",
   language: "언어",
   english: "English",
   chinese: "中文",
@@ -63,4 +65,8 @@ export const ko = {
   commonSensitiveFields: "일반적인 민감 필드",
   selectFieldsToRedact: "마스킹할 필드 선택",
   enterFieldName: "필드 이름 입력",
+  jsonQuery: "JSON 쿼리 (jq)",
+  jsonPathTool: "JSON 경로",
+  jsonSchema: "JSON 스키마",
+  generateType: "타입 생성",
 };

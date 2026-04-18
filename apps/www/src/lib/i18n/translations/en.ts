@@ -37,6 +37,8 @@ export const en = {
   editor: "Editor",
   graphView: "Graph View",
   treeView: "Tree View",
+  graph: "Graph",
+  tree: "Tree",
   language: "Language",
   english: "English",
   chinese: "中文",
@@ -63,4 +65,8 @@ export const en = {
   commonSensitiveFields: "Common Sensitive Fields",
   selectFieldsToRedact: "Select fields to redact",
   enterFieldName: "Enter field name",
+  jsonQuery: "JSON Query (jq)",
+  jsonPathTool: "JSON Path",
+  jsonSchema: "JSON Schema",
+  generateType: "Generate Type",
 };
