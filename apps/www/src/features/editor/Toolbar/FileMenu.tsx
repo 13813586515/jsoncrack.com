@@ -4,12 +4,14 @@ import { event as gaEvent } from "nextjs-google-analytics";
 import { CgChevronDown } from "react-icons/cg";
 import useFile from "../../../store/useFile";
 import { useModal } from "../../../store/useModal";
+import { useTranslation } from "../../../store/useI18n";
 import { StyledToolElement } from "./styles";
 
 export const FileMenu = () => {
   const setVisible = useModal(state => state.setVisible);
   const getContents = useFile(state => state.getContents);
   const getFormat = useFile(state => state.getFormat);
+  const { t } = useTranslation();
 
   const handleSave = () => {
     const a = document.createElement("a");
@@ -25,16 +27,21 @@ export const FileMenu = () => {
   return (
     <Menu shadow="md" withArrow>
       <Menu.Target>
-        <StyledToolElement title="File">
+        <StyledToolElement title={t("file")}>
           <Flex align="center" gap={3}>
-            File
+            {t("file")}
             <CgChevronDown />
           </Flex>
         </StyledToolElement>
       </Menu.Target>
       <Menu.Dropdown>
-        <Menu.Item onClick={() => setVisible("ImportModal", true)}>Import</Menu.Item>
-        <Menu.Item onClick={handleSave}>Export</Menu.Item>
+        <Menu.Item onClick={() => setVisible("ImportModal", true)}>
+          {t("import")}
+        </Menu.Item>
+        <Menu.Item onClick={handleSave}>{t("export")}</Menu.Item>
+        <Menu.Item onClick={() => setVisible("RedactModal", true)}>
+          {t("exportWithRedaction")}
+        </Menu.Item>
       </Menu.Dropdown>
     </Menu>
   );
