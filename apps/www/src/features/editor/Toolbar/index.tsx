@@ -8,6 +8,7 @@ import { FaGithub } from "react-icons/fa6";
 import { TbExternalLink } from "react-icons/tb";
 import { JSONCrackLogo } from "../../../layout/JSONCrackBrandLogo";
 import { FileMenu } from "./FileMenu";
+import { LanguageToggle } from "./LanguageToggle";
 import { ThemeToggle } from "./ThemeToggle";
 import { ToolsMenu } from "./ToolsMenu";
 import { ViewMenu } from "./ViewMenu";
@@ -84,6 +85,7 @@ export const Toolbar = () => {
             Upgrade to Pro Editor <TbExternalLink size={14} />
           </StyledToDiagramLink>
         )}
+        <LanguageToggle />
         <ThemeToggle />
         <Link
           href="https://chromewebstore.google.com/detail/json-crack/hbaeglefdflnhodchjiaphmheaojikhh"
