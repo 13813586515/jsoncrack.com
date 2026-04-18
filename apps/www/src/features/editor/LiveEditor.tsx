@@ -4,6 +4,9 @@ import styled from "styled-components";
 import { ViewMode } from "../../enums/viewMode.enum";
 import { GraphView } from "./views/GraphView";
 import { TreeView } from "./views/TreeView";
+import { TableView } from "./views/TableView";
+import { TimelineView } from "./views/TimelineView";
+import { MapView } from "./views/MapView";
 
 const StyledLiveEditor = styled.div`
   position: relative;
@@ -35,6 +38,9 @@ const View = () => {
 
   if (viewMode === ViewMode.Graph) return <GraphView />;
   if (viewMode === ViewMode.Tree) return <TreeView />;
+  if (viewMode === ViewMode.Table) return <TableView />;
+  if (viewMode === ViewMode.Timeline) return <TimelineView />;
+  if (viewMode === ViewMode.Map) return <MapView />;
   return null;
 };
 

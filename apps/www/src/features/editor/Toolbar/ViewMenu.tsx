@@ -32,6 +32,9 @@ export const ViewMenu = () => {
           data={[
             { value: ViewMode.Graph, label: "Graph" },
             { value: ViewMode.Tree, label: "Tree" },
+            { value: ViewMode.Table, label: "Table" },
+            { value: ViewMode.Timeline, label: "Timeline" },
+            { value: ViewMode.Map, label: "Map" },
           ]}
           fullWidth
           orientation="vertical"
