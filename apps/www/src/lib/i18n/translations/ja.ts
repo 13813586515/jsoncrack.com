@@ -37,6 +37,8 @@ export const ja = {
   editor: "エディター",
   graphView: "グラフビュー",
   treeView: "ツリービュー",
+  graph: "グラフ",
+  tree: "ツリー",
   language: "言語",
   english: "English",
   chinese: "中文",
@@ -63,4 +65,8 @@ export const ja = {
   commonSensitiveFields: "一般的な機密フィールド",
   selectFieldsToRedact: "マスクするフィールドを選択",
   enterFieldName: "フィールド名を入力",
+  jsonQuery: "JSON クエリ (jq)",
+  jsonPathTool: "JSON パス",
+  jsonSchema: "JSON スキーマ",
+  generateType: "型を生成",
 };

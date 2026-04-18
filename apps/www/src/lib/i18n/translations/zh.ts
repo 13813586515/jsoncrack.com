@@ -37,6 +37,8 @@ export const zh = {
   editor: "编辑器",
   graphView: "图形视图",
   treeView: "树视图",
+  graph: "图形",
+  tree: "树",
   language: "语言",
   english: "English",
   chinese: "中文",
@@ -63,4 +65,8 @@ export const zh = {
   commonSensitiveFields: "常用敏感字段",
   selectFieldsToRedact: "选择要脱敏的字段",
   enterFieldName: "输入字段名",
+  jsonQuery: "JSON 查询 (jq)",
+  jsonPathTool: "JSON 路径",
+  jsonSchema: "JSON 模式",
+  generateType: "生成类型",
 };
