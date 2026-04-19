@@ -267,7 +267,7 @@ export const PredicateSearchInput = ({ graphData, onClose }: PredicateSearchInpu
             />
           </Group>
           <Text size="10px" c="dimmed" style={{ marginLeft: "auto" }}>
-            Examples: $.users[?(@.age >= 18)], $..[?(@.status == \"active\")]
+            {`Examples: $.users[?(@.age >= 18)], $..[?(@.status == "active")]`}
           </Text>
         </StyledRow>
       </Stack>
