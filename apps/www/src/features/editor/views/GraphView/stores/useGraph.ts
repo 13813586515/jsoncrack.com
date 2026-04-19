@@ -4,6 +4,8 @@ import type { LayoutDirection, NodeData, JSONCrackRef } from "jsoncrack-react";
 import type { ViewPort } from "react-zoomable-ui";
 import { create } from "zustand";
 
+export type ViewMode = "visualizer" | "schemaModeler";
+
 const pathKey = (path: JSONPath): string => JSON.stringify(path);
 
 export interface Graph {
@@ -13,6 +15,7 @@ export interface Graph {
   fullscreen: boolean;
   selectedNode: NodeData | null;
   collapsedPaths: string[];
+  viewMode: ViewMode;
 }
 
 const initialStates: Graph = {
@@ -22,6 +25,7 @@ const initialStates: Graph = {
   fullscreen: false,
   selectedNode: null,
   collapsedPaths: [],
+  viewMode: "visualizer",
 };
 
 interface GraphActions {
@@ -38,6 +42,8 @@ interface GraphActions {
   setCollapsedPaths: (paths: string[]) => void;
   expandAll: () => void;
   collapseAllDepth1: (json: string) => void;
+  setViewMode: (mode: ViewMode) => void;
+  toggleViewMode: () => void;
 }
 
 const useGraph = create<Graph & GraphActions>((set, get) => ({
@@ -94,6 +100,12 @@ const useGraph = create<Graph & GraphActions>((set, get) => ({
     } catch {
       // ignore invalid JSON
     }
+  },
+  setViewMode: mode => set({ viewMode: mode }),
+  toggleViewMode: () => {
+    set(state => ({
+      viewMode: state.viewMode === "visualizer" ? "schemaModeler" : "visualizer",
+    }));
   },
 }));
 
