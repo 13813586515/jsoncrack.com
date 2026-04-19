@@ -231,7 +231,7 @@ export const SchemaPropertyPanel: React.FC<SchemaPropertyPanelProps> = ({
               size="xs"
               value={selectedNode.constraints.default || ""}
               onChange={e => handleDefaultChange(e.currentTarget.value)}
-              placeholder="JSON value (e.g., \"hello\", 42, true)"
+              placeholder={`JSON value (e.g., "hello", 42, true)`}
             />
 
             <TagsInput
