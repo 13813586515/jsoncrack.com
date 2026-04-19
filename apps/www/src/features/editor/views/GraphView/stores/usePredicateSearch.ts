@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import type { JSONPath } from "jsonc-parser";
 import type { NodeData, EdgeData, GraphData } from "jsoncrack-react";
-import type { PredicateSearchResult, SearchHistoryItem } from "../../../../../../types/predicateSearch";
+import type { PredicateSearchResult, SearchHistoryItem } from "../../../../../types/predicateSearch";
 
 interface PredicateSearchState {
   isOpen: boolean;
