@@ -5,7 +5,7 @@ import type {
   SchemaType,
   SchemaConstraints,
   JSONSchemaRoot,
-} from "../../types/schemaModeler";
+} from "../../../../../../types/schemaModeler";
 
 let nodeIdCounter = 1;
 let edgeIdCounter = 1;
