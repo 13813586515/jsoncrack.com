@@ -1,7 +1,7 @@
 import { create } from "zustand";
-import type { TimelineSnapshot, TimelineState, TimelineActions } from "../../../../../../types/timeline";
-import { computeDiff } from "../../../../../../types/timeline";
-import useFile from "../../../../../../store/useFile";
+import type { TimelineSnapshot, TimelineState, TimelineActions } from "../../../../../types/timeline";
+import { computeDiff } from "../../../../../types/timeline";
+import useFile from "../../../../../store/useFile";
 
 let snapshotIdCounter = 1;
 const generateSnapshotId = () => `snapshot-${snapshotIdCounter++}`;
